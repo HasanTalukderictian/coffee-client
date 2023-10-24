@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import AddCoffee from './Components/AddCoffee';
+import UpdateCoffee from './Components/UpdateCoffee';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App></App>,
+  },
+  {
+    path:'/addCoffee',
+    element:<AddCoffee></AddCoffee>
+  },{
+    path:'/updateCoffee',
+    element:<UpdateCoffee></UpdateCoffee>
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <RouterProvider router={router} />
   </React.StrictMode>
 );
 
