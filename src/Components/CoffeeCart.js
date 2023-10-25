@@ -60,7 +60,7 @@ const CoffeeCart = ({ coffee, coffees, setCoffees }) => {
                     <div className='lg:flex justify-between mg:flex sm:grid'>
                     <div className="card-actions justify-end my-3 ml-20 ">
                         <div className="btn-group btn-group-vertical space-y-4">
-                            <button className="btn btn-active">View</button>
+                            <Link to={`/viewCoffee/${_id}`}><button className="btn btn-primary">View</button></Link>
                             <Link to={`updateCoffee/${_id}`}><button className="btn btn-success">Update</button></Link>
                             <button onClick={()=> handleDelete(_id)} className="btn btn-warning">Delete</button>
                         </div>

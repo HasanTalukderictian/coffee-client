@@ -9,12 +9,13 @@ import {
 } from "react-router-dom";
 import AddCoffee from './Components/AddCoffee';
 import UpdateCoffee from './Components/UpdateCoffee';
+import ViewCoffee from './Components/ViewCoffee';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader:() => fetch('http://localhost:5000/coffee')
+    loader:() => fetch('https://coffee-store-server-rh95exc7y-hasantalukder1234.vercel.app/coffee')
   },
   {
     path:'/addCoffee',
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
   },{
     path:'/updateCoffee/:id',
     element:<AddCoffee></AddCoffee>,
-    loader:({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    loader:({params}) => fetch(`https://coffee-store-server-rh95exc7y-hasantalukder1234.vercel.app/coffee/${params.id}`)
+  },
+  {
+    path:'/viewCoffee/:id',
+    element:<ViewCoffee></ViewCoffee>,
+    loader:({params})=> fetch(`https://coffee-store-server-rh95exc7y-hasantalukder1234.vercel.app/coffee/${params.id}`)
   }
 ]);
 
